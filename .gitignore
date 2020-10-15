@@ -1,0 +1,8 @@
+*_bak/*
+www/*
+nginx/conf.d/*
+gogs/gogs/log/
+gogs/ssh/
+/logs
+/mysql
+/redis
