@@ -26,12 +26,16 @@ RUN echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib \n 
 		curl \
 		libcurl4-gnutls-dev \
 		libzip-dev \
+		libicu-dev \
+		g++ \
 		&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-		&& docker-php-ext-install -j$(nproc) gd zip iconv pdo_mysql opcache mysqli bcmath\
+		&& docker-php-ext-configure intl \
+		&& docker-php-ext-install -j$(nproc) gd zip iconv pdo_mysql opcache mysqli bcmath intl \
 		&& pecl install redis-5.1.1 && docker-php-ext-enable redis \
 		&& pecl install imagick && docker-php-ext-enable imagick \
 		&& pecl install mcrypt && docker-php-ext-enable mcrypt \
 		&& pecl install memcached && docker-php-ext-enable memcached \
 		&& pecl install msgpack && docker-php-ext-enable msgpack \
 		&& pecl install yar && docker-php-ext-enable yar \
+		&& pecl install yaml && docker-php-ext-enable yaml \
 		&& pecl install xdebug && docker-php-ext-enable xdebug
