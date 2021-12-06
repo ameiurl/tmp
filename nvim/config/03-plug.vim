@@ -55,8 +55,7 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
-Plug 'sindrets/diffview.nvim'					   " df
-" Plug 'kdheepak/lazygit.nvim'					   " <leader>g
+Plug 'kdheepak/lazygit.nvim'					   " <leader>g
 
 " ranger
 " Plug 'kevinhwang91/rnvimr'						   " R
@@ -81,10 +80,10 @@ require('plugins.nvim-treesitter')
 require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.nvim-autopairs')
+require('plugins.comment')
 --require('plugins.lsp')
 --require('plugins.vista')
 --require('plugins.bufferline')
 --require('plugins.galaxyline')
-require('plugins.comment')
-require('plugins.diffview')
+--require('plugins.diffview')
 EOF
