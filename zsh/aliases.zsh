@@ -8,7 +8,7 @@ alias lg='lazygit'
 alias rg='ranger'
 alias j='jobs'
 # git
-alias gs='git status'
+alias gst='git status'
 alias ga='git add'
 alias gcmsg='git commit -m'
 alias ggpush='git push'
