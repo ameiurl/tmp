@@ -23,13 +23,15 @@ require "nvim-treesitter.configs".setup {
 		enable = true,
 		filetypes = {'javascript', 'php'}
 	},
-	-- autotag = { enable = true },
+	autotag = { 
+		enable = false 
+	},
 	matchup = { enable = true },
 	incremental_selection = {
-		enable = false,
+		enable = true,
 		keymaps = {
-			init_selection = "<Leader>v", -- maps in normal mode to init the node/scope selection
-			node_incremental = "v", -- increment to the upper named parent
+			init_selection = "<CR>", -- maps in normal mode to init the node/scope selection
+			node_incremental = "<CR>", -- increment to the upper named parent
 			scope_incremental = '<TAB>', -- increment to the upper scope (as defined in locals.scm)
 			node_decremental = '<BS>', -- decrement to the previous node
 		},
