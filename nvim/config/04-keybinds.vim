@@ -106,6 +106,7 @@ vnoremap > >gv
 " noremap L $
 
 " Shift+HJKL快速移动
+nnoremap H J 
 nnoremap K <Esc>5<up>
 nnoremap J <Esc>5<down>
 
