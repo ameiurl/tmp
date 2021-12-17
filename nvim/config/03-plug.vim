@@ -54,6 +54,7 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
+Plug 'tpope/vim-fugitive'
 Plug 'kdheepak/lazygit.nvim'					   " <leader>g
 
 " ranger
