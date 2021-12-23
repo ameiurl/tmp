@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 " 美化
 Plug 'vim-airline/vim-airline'                     " 状态栏增强
 Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
-Plug 'ryanoasis/vim-devicons'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -23,6 +22,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " vim补助
+Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
 Plug 'lambdalisue/suda.vim'                        " root权限直接输入密码
 Plug 'mg979/vim-visual-multi',{'branch': 'master'} " <c-m>批量量更新
@@ -50,15 +50,12 @@ Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
 
 " markdown
 Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdownPreview
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'						   " :Git log 
 Plug 'kdheepak/lazygit.nvim'					   " <leader>g
-
-" ranger
-" Plug 'kevinhwang91/rnvimr'						   " R
 
 " 搜索
 Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
