@@ -40,13 +40,24 @@ Plug 'ludovicchabant/vim-gutentags'				   " 提供 ctags/gtags 后台数据库�
 Plug 'skywind3000/gutentags_plus'				   " 提供 GscopeFind 命令并自动处理好 gtags 数据库切换
 Plug 'skywind3000/vim-preview'					   " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
 
-" taglist
-Plug 'liuchengxu/vista.vim'
-
 " coc自动补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
 Plug 'ameiurl/vim-snippets'
 Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
+
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'williamboman/nvim-lsp-installer'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
+"" Plug 'rafamadriz/friendly-snippets'
+"Plug 'onsails/lspkind-nvim'
+"" Plug 'L3MON4D3/LuaSnip'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -78,6 +89,9 @@ require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.nvim-autopairs')
 require('plugins.comment')
+--require('plugins.lsp.lsp-install')
+--require('plugins.lsp.lsp-config')
+--require('plugins.lsp.nvim-cmp')
 --require('plugins.lsp')
 --require('plugins.vista')
 --require('plugins.bufferline')
