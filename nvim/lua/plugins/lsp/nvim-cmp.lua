@@ -12,7 +12,7 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },
- formatting = {
+  formatting = {
     format = lspkind.cmp_format(),
   },
   mapping = {
@@ -25,34 +25,33 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<Tab>"] = function(fallback)
-         if cmp.visible() then
-            cmp.select_next_item()
-         elseif luasnip.expand_or_jumpable() then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-         else
-            fallback()
-         end
-      end,
-      ["<S-Tab>"] = function(fallback)
-         if cmp.visible() then
-            cmp.select_prev_item()
-         elseif luasnip.jumpable(-1) then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-         else
-            fallback()
-         end
-      end,
+	['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+    --["<Tab>"] = function(fallback)
+    --     if cmp.visible() then
+    --        cmp.select_next_item()
+    --     elseif luasnip.expand_or_jumpable() then
+    --        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+    --     else
+    --        fallback()
+    --     end
+    --  end,
+    --  ["<S-Tab>"] = function(fallback)
+    --     if cmp.visible() then
+    --        cmp.select_prev_item()
+    --     elseif luasnip.jumpable(-1) then
+    --        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+    --     else
+    --        fallback()
+    --     end
+    --  end,
   },
   sources = cmp.config.sources({
     -- { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
-    { name = 'path' }
-  }, {
     { name = 'buffer', keyword_length=3 },
-    { name = 'path' }
-  })
+    { name = 'path' },
+  }),
 })
 
 -- Use buffer source for `/`.

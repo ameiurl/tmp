@@ -51,3 +51,16 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+nvim_lsp.intelephense.setup({
+    settings = {
+        intelephense = {
+            diagnostics = {
+				undefinedTypes = false
+			},
+            files = {
+                maxSize = 5000000;
+            };
+        };
+    }
+});
