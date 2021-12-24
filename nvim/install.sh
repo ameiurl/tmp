@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # xsel共用粘贴板
-echo '[*] pacman installing python3 Neovim nodejs the_silver_searcher global ctags yarn'
+echo '[*] pacman installing neovim nodejs global ctags npm xsel lua ripgrep'
 sudo pacman -S neovim nodejs global ctags npm xsel lua ripgrep
 
 # echo '[*] install pip';
@@ -12,7 +12,7 @@ echo '[*] pip installing Neovim'
 pip3 install neovim trash-cli
 
 echo '[*] npm installing instant-markdown-d'
-sudo npm -g install yarn instant-markdown-d
+sudo npm -g install yarn neovim instant-markdown-d
 
 # 判断是否有nvim文件夹，没有则创建
 echo '[*] Preparing Neovim config directory ...'
