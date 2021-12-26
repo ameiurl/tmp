@@ -55,9 +55,7 @@ Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
 "Plug 'hrsh7th/nvim-cmp'
 "Plug 'hrsh7th/cmp-vsnip'
 "Plug 'hrsh7th/vim-vsnip'
-"" Plug 'rafamadriz/friendly-snippets'
 "Plug 'onsails/lspkind-nvim'
-"" Plug 'L3MON4D3/LuaSnip'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
