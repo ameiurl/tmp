@@ -35,6 +35,6 @@ let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 " 禁用 gutentags 自动加载 gtags 数据库的行为
 " 避免多个项目数据库相互干扰
 " 使用plus插件解决问题
-let g:gutentags_auto_add_gtags_cscope = 0"
+let g:gutentags_auto_add_gtags_cscope = 0
 " 输出错误:GutentagsToggleTrace :messages  权限问题 或 删除~/.cache/tags/
 " let g:gutentags_define_advanced_commands = 1
