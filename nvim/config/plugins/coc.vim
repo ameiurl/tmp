@@ -53,10 +53,10 @@ omap ac <Plug>(coc-classobj-a)
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> go <Plug>(coc-definition)
-nmap <silent> gl :tab sp<CR><Plug>(coc-definition)
+nmap <silent> gO :buffer sp<CR><Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gl <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap tt :CocCommand explorer<CR>
 " coc-translator
