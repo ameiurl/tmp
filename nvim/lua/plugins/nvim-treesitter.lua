@@ -28,7 +28,7 @@ require "nvim-treesitter.configs".setup {
 	},
 	matchup = { enable = true },
 	incremental_selection = {
-		enable = false,
+		enable = true,
 		keymaps = {
 			init_selection = "<CR>", -- maps in normal mode to init the node/scope selection
 			node_incremental = "<CR>", -- increment to the upper named parent
