@@ -1,9 +1,5 @@
 local nvim_lsp = require('lspconfig')
 
-function buf_set_keymap(...)
-  vim.api.nvim_buf_set_keymap(bufnr, ...)
-end
-
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -51,16 +47,3 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-
-
-nvim_lsp.intelephense.setup{
-	settings = {
-		intelephense = {
-			diagnostics = {
-				undefinedTypes = false, 
-				unusedSymbols = true, 
-				undefinedMethods = false
-			}
-		}
-	}
-}
