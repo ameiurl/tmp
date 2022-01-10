@@ -94,7 +94,4 @@ require('plugins.comment')
 --require('plugins.lsp.nvim-cmp')
 --require('plugins.lsp')
 --require('plugins.vista')
---require('plugins.bufferline')
---require('plugins.galaxyline')
---require('plugins.diffview')
 EOF
