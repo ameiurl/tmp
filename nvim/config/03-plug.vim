@@ -10,6 +10,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'romgrk/nvim-treesitter-context'
 
 " fuzzy finders
 Plug 'nvim-lua/popup.nvim'
