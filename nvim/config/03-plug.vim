@@ -36,7 +36,6 @@ Plug 'windwp/nvim-autopairs'
 Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
 Plug 'machakann/vim-highlightedyank'			   " 复制效果
 Plug 'ojroques/vim-scrollstatus'
-Plug 'danilamihailov/beacon.nvim'
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'				   " 提供 ctags/gtags 后台数据库自动更新功能
