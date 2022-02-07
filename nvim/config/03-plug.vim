@@ -121,8 +121,8 @@ nnoremap <LEADER>h :call Show_documentation()<CR>
 " let $NVIM_COC_LOG_FILE = '/Users/david/Desktop/log.txt'
 
 nnoremap <silent><nowait> <LEADER>l :CocList diagnostics<cr>
-nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
-nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <c-c> :CocCommand<CR>
 " Text Objects
 xmap kf <Plug>(coc-funcobj-i)
