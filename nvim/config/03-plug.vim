@@ -46,7 +46,7 @@ Plug 'skywind3000/vim-preview'					   " 提供基于 TAGS 的定义预览，函�
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'ameiurl/vim-snippets'
-Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
+" Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
 
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'williamboman/nvim-lsp-installer'
@@ -99,7 +99,7 @@ inoremap <silent><expr> <TAB>
 	\ <SID>check_back_space() ? "\<TAB>" :
 	\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 function! s:check_back_space() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]  =~# '\s'
@@ -175,7 +175,7 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 " ==
 " == emmet
 " ==
-let g:user_emmet_expandabbr_key = '<C-o>'
+" let g:user_emmet_expandabbr_key = '<C-o>'
 
 
 " ==
