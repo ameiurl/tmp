@@ -60,5 +60,7 @@ let g:highlightedyank_highlight_duration = 500
 highlight HighlightedyankRegion ctermfg=black ctermbg=214
 
 " telescope
-highlight TelescopeMatchingColor ctermfg=white ctermbg=33
+" highlight TelescopeSelectionColor ctermfg=white ctermbg=yellow
+highlight TelescopeMatchingColor ctermfg=88
+" highlight default link TelescopeSelection TelescopeSelectionColor 
 highlight default link TelescopeMatching TelescopeMatchingColor 
