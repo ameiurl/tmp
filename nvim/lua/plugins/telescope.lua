@@ -57,26 +57,39 @@ require("telescope").setup {
 	}
 }
 
--- fuzzyfind 模糊搜索 快捷键
+local options = {
+    path_display = {},
+    layout_strategy = 'horizontal',
+    layout_config = { preview_width = 0.55 },
+}
 function _G.__telescope_files()
-	require('telescope.builtin').find_files{
-	    path_display = {},
-	    layout_strategy = 'horizontal',
-	    layout_config = { preview_width = 0.55 },
-    }
+    -- Launch file search using Telescope
+    if vim.fn.isdirectory '.git' ~= 0 then
+        -- if in a git project, use :Telescope git_files
+        require('telescope.builtin').git_files(options)
+    else
+        -- otherwise, use :Telescope find_files
+        require('telescope.builtin').find_files(options)
+    end
 end
 function _G.__telescope_buffers()
-	require('telescope.builtin').buffers {
-		sort_mru = true,
-		ignore_current_buffer = true,
-		sorter = require('telescope.sorters').get_substr_matcher(),
-		path_display = { 'shorten' },
-		layout_strategy = 'horizontal',
-		layout_config = { preview_width = 0.65 },
-		show_all_buffers = true,
-		color_devicons = true,
-	}
-end
+        require('telescope.builtin').buffers(
+            require('telescope.themes').get_dropdown {
+                previewer = false,
+                only_cwd = vim.fn.haslocaldir() == 1,
+                show_all_buffers = false,
+                sort_mru = true,
+                ignore_current_buffer = true,
+                sorter = require('telescope.sorters').get_substr_matcher(),
+                selection_strategy = 'closest',
+                path_display = { 'shorten' },
+                layout_strategy = 'center',
+                winblend = 0,
+                layout_config = { width = 70 },
+                color_devicons = true,
+            }
+        )
+    end
 function _G.__telescope_grep()
 	require('telescope.builtin').live_grep {
 		path_display = {},
