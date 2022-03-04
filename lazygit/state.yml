@@ -3,5 +3,6 @@ recentrepos:
 - /server/www/longyan_szdj
 - /home/amei/.config
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- q
 hidecommandlog: false

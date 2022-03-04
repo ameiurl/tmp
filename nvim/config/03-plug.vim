@@ -70,7 +70,7 @@ Plug 'kdheepak/lazygit.nvim'					   " <leader>g
 
 " 搜索
 Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
-Plug 'jremmen/vim-ripgrep'						   " <leader>v <leader>vv
+" Plug 'jremmen/vim-ripgrep'						   " <leader>v <leader>vv
 call plug#end()
 
 let mapleader=','
@@ -289,9 +289,9 @@ let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 " ==
 " == Rg
 " ==
-nnoremap <silent> <Leader>v :Rg 
-nnoremap <silent> <Leader>vv :Rg<CR>
-let g:rg_highlight = 'true'
+" nnoremap <silent> <Leader>v :Rg 
+" nnoremap <silent> <Leader>vv :Rg<CR>
+" let g:rg_highlight = 'true'
 
 
 " ==
