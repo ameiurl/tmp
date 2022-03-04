@@ -55,5 +55,10 @@ colorscheme zend
 "  endif
 "endif
 
+" highlightedyank
 let g:highlightedyank_highlight_duration = 500
 highlight HighlightedyankRegion ctermfg=black ctermbg=214
+
+" telescope
+highlight TelescopeMatchingColor ctermfg=white ctermbg=33
+highlight default link TelescopeMatching TelescopeMatchingColor 

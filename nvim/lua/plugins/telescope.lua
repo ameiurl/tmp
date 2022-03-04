@@ -15,6 +15,7 @@ require("telescope").setup {
 		file_previewer = previewers.vim_buffer_cat.new,
 		grep_previewer = previewers.vim_buffer_vimgrep.new,
 		qflist_previewer = previewers.vim_buffer_qflist.new,
+		color_devicons = true,
 		mappings = {
 			i = {
 				['<ESC>'] = actions.close,
