@@ -22,6 +22,19 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" coc自动补全
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ameiurl/vim-snippets'
+
+" markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdownPreview
+
+" Git
+Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
+Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
+Plug 'kdheepak/lazygit.nvim'					   " <leader>g
+
 " vim补助
 Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
@@ -35,42 +48,13 @@ Plug 'hrsh7th/vim-eft'							   " 增强f|t操作，在摁下f|t时，会高亮�
 Plug 'windwp/nvim-autopairs'
 Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
 Plug 'machakann/vim-highlightedyank'			   " 复制效果
-" Plug 'ojroques/vim-scrollstatus'
+Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
+Plug 'liuchengxu/vista.vim'
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'				   " 提供 ctags/gtags 后台数据库自动更新功能
 Plug 'skywind3000/gutentags_plus'				   " 提供 GscopeFind 命令并自动处理好 gtags 数据库切换
 Plug 'skywind3000/vim-preview'					   " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
-
-" coc自动补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'liuchengxu/vista.vim'
-Plug 'ameiurl/vim-snippets'
-" Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
-
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'williamboman/nvim-lsp-installer'
-"Plug 'hrsh7th/cmp-nvim-lsp'
-"Plug 'hrsh7th/cmp-buffer'
-"Plug 'hrsh7th/cmp-path'
-"Plug 'hrsh7th/cmp-cmdline'
-"Plug 'hrsh7th/nvim-cmp'
-"Plug 'hrsh7th/cmp-vsnip'
-"Plug 'hrsh7th/vim-vsnip'
-"Plug 'onsails/lspkind-nvim'
-
-" markdown
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdownPreview
-
-" Git
-Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
-Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
-Plug 'kdheepak/lazygit.nvim'					   " <leader>g
-
-" 搜索
-Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
-" Plug 'jremmen/vim-ripgrep'						   " <leader>v <leader>vv
 call plug#end()
 
 let mapleader=','
@@ -173,42 +157,12 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 
 " ==
-" == emmet
-" ==
-" let g:user_emmet_expandabbr_key = '<C-o>'
-
-
-" ==
 " == far
 " ==
 let g:far#enable_undo=1
 let g:far#source='ag'
 " :Farr foo bar **/*.py   t s u
 noremap <LocalLeader>f :Far  **/*.php<left><left><left><left><left><left><left><left><left>
-
-
-" ==
-" == fzf
-" ==
-" map <Leader>f :Files<CR>
-" map <leader>h :History<CR>
-" map <leader>b :Buffers<CR>
-" map <leader>l :Lines<CR>
-" command! -bang -nargs=* Rg call fzf#vim#ag(<q-args>, '--color-path "1;39" --color-line "1;30" --color-match "1;31" --color-line-number "1;31"', 
-"   \					<bang>0 ? fzf#vim#with_preview('up:60%')
-"   \                         : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
-"command! -bang -nargs=* Sg
-"  \ call fzf#vim#grep(
-"  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-"  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-"  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-"  \   <bang>0)
-"nnoremap <silent> <Leader>s :Sg<CR>
-"let g:fzf_layout = { 'window': 'enew' }
-"let g:fzf_layout = { 'window': '-tabnew' }
-"let g:fzf_layout = { 'window': '20split enew' }
-"let g:fzf_preview_window = 'right:60%'
-"let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 
 " ==
@@ -284,14 +238,6 @@ let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
 let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
-
-
-" ==
-" == Rg
-" ==
-" nnoremap <silent> <Leader>v :Rg 
-" nnoremap <silent> <Leader>vv :Rg<CR>
-" let g:rg_highlight = 'true'
 
 
 " ==
@@ -525,9 +471,4 @@ require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.nvim-autopairs')
 require('plugins.comment')
---require('plugins.lsp.lsp-install')
---require('plugins.lsp.lsp-config')
---require('plugins.lsp.nvim-cmp')
---require('plugins.lsp')
---require('plugins.vista')
 EOF
