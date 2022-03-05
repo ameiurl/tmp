@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # xsel共用粘贴板
-echo '[*] pacman installing neovim nodejs global ctags npm xsel lua ripgrep'
-sudo pacman -S neovim nodejs global ctags npm xsel lua ripgrep
+echo '[*] pacman installing neovim nodejs npm xsel lua'
+sudo pacman -S neovim nodejs npm xsel lua
 
 # echo '[*] install pip';
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
