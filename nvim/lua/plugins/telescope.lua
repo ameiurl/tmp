@@ -142,6 +142,12 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
     "n", 
+    "<leader>gg", 
+    "<CMD>lua require('telescope.builtin').grep_string { search = 'n '.. vim.fn.expand('<cword>')}<CR>", 
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n", 
     "<leader>sf", 
     "<CMD>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>", 
     opts
