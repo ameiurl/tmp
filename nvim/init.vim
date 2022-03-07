@@ -359,7 +359,6 @@ set clipboard+=unnamedplus
 
 """""""" 插件管理vim-plug""""""""
 call plug#begin('~/.config/nvim/plugged')
-" 美化
 Plug 'vim-airline/vim-airline'                     " 状态栏增强
 Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
 Plug 'ameiurl/zend.vim'
