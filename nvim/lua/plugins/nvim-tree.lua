@@ -12,7 +12,7 @@ vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 45
 -- vim.g.nvim_tree_gitignore = 1
-vim.g.nvim_tree_quit_on_open = 0
+-- vim.g.nvim_tree_quit_on_open = 0
 -- vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
 vim.g.nvim_tree_show_icons = {
   git = 1,
@@ -99,6 +99,15 @@ require("nvim-tree").setup {
 		enable = true,
 		auto_open = true,
 	},
+	filters = {
+        dotfiles = false,
+        custom = {'.git', '.cache'}
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
 	view = {
 		mappings = {
 			list = {
