@@ -888,6 +888,9 @@ nnoremap <leader>w :w<CR>
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
+" Delete find pair
+nnoremap dy d%
+
 " 复制选中区到系统剪切板中
 "vnoremap <leader>y "+y
 
