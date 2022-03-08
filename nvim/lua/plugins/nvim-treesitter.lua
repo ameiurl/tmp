@@ -26,7 +26,9 @@ require "nvim-treesitter.configs".setup {
 	autotag = { 
 		enable = false 
 	},
-	matchup = { enable = true },
+	matchup = { 
+	    enable = true 
+	},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -72,6 +74,18 @@ require "nvim-treesitter.configs".setup {
 			swap_next = { ['<Leader>>'] = '@parameter.inner' },
 			swap_previous = { ['<Leader><'] = '@parameter.inner' },
 		},
+		move = {
+			enable = true,
+			set_jumps = true,
+			goto_next_start = {
+				["gf"] = "@function.outer",
+				["ga"] = "@parameter.inner"
+			},
+			goto_previous_start = {
+				["gt"] = "@function.outer",
+				["gb"] = "@parameter.inner"
+			}
+		}
 	},
 	context_commentstring = {
 		enable = true,
