@@ -392,7 +392,7 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdow
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
 Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
-Plug 'kdheepak/lazygit.nvim'					   " <leader>g
+Plug 'cohama/agit.vim'
 
 " vim补助
 Plug 'ryanoasis/vim-devicons'
@@ -518,15 +518,20 @@ let g:far#source='ag'
 " :Farr foo bar **/*.py   t s u
 noremap <LocalLeader>f :Far  **/*.php<left><left><left><left><left><left><left><left><left>
 
+" ===
+" === Agit
+" ===
+nnoremap <LEADER>gl :Agit<CR>
+let g:agit_no_default_mappings = 1
 
 " ==
 " == lazygit 
 " ==
-nnoremap <silent> <leader>g :LazyGit<CR>
-let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
-let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
-let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
+" nnoremap <silent> <leader>g :LazyGit<CR>
+" let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+" let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
+" let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+" let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 
 
 " ==
@@ -707,8 +712,8 @@ let g:VM_maps                       = {}
 "let g:VM_custom_motions             = {'n': 'h', 'i': 'l', 'u': 'k', 'e': 'j', 'N': '0', 'I': '$', 'h': 'e'}
 "let g:VM_maps['i']                  = 'm'
 "let g:VM_maps['I']                  = 'M'
-let g:VM_maps['Find Under']         = '<C-k>'
-let g:VM_maps['Find Subword Under'] = '<C-k>'
+let g:VM_maps['Find Under']         = '<C-m>'
+let g:VM_maps['Find Subword Under'] = '<C-m>'
 let g:VM_maps['Find Next']          = ''
 let g:VM_maps['Find Prev']          = ''
 let g:VM_maps['Remove Region']      = 'q'
@@ -1037,3 +1042,16 @@ highlight HighlightedyankRegion ctermfg=black ctermbg=214
 highlight TelescopeMatchingColor ctermfg=88
 " highlight default link TelescopeSelection TelescopeSelectionColor 
 highlight default link TelescopeMatching TelescopeMatchingColor 
+
+" Agit
+highlight agitDiffRemoveColor ctermfg=88
+highlight agitDiffAddColor ctermfg=28
+highlight agitDiffFileNameColor ctermfg=90
+highlight agitDiffIndexColor ctermfg=black
+highlight agitDiffSubnameColor ctermfg=red
+hi def link agitDiffRemove agitDiffRemoveColor 
+hi def link agitDiffAdd agitDiffAddColor
+hi def link agitDiffFileName agitDiffFileNameColor 
+hi def link agitDiffIndex agitDiffIndexColor 
+hi def link agitDiffLine agitDiffSubnameColor 
+

@@ -1,7 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
-- /server/www/longyan_szdj
 - /home/amei/.config
+- /server/www/erp_doraemon
+- /server/www/longyan_szdj
 startuppopupversion: 5
 customcommandshistory:
 - q
