@@ -1046,8 +1046,8 @@ highlight default link TelescopeMatching TelescopeMatchingColor
 " Agit
 highlight agitDiffRemoveColor ctermfg=88
 highlight agitDiffAddColor ctermfg=28
-highlight agitDiffFileNameColor ctermfg=90
-highlight agitDiffIndexColor ctermfg=black
+highlight agitDiffFileNameColor ctermfg=blue
+highlight agitDiffIndexColor ctermfg=blue
 highlight agitDiffSubnameColor ctermfg=red
 hi def link agitDiffRemove agitDiffRemoveColor 
 hi def link agitDiffAdd agitDiffAddColor
