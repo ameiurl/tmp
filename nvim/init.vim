@@ -1048,10 +1048,9 @@ highlight agitDiffRemoveColor ctermfg=88
 highlight agitDiffAddColor ctermfg=28
 highlight agitDiffFileNameColor ctermfg=blue
 highlight agitDiffIndexColor ctermfg=blue
-highlight agitDiffSubnameColor ctermfg=red
+
 hi def link agitDiffRemove agitDiffRemoveColor 
 hi def link agitDiffAdd agitDiffAddColor
 hi def link agitDiffFileName agitDiffFileNameColor 
 hi def link agitDiffIndex agitDiffIndexColor 
-hi def link agitDiffLine agitDiffSubnameColor 
-
+hi def link agitDiffSubname agitDiffIndexColor 
