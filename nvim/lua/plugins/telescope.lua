@@ -118,7 +118,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	'n',
-	'<Leader>f',
+	'<Space>f',
 	'<cmd>lua __telescope_files()<CR>',
 	opts
 )
@@ -166,7 +166,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
     "n", 
-    "<Space>f", 
+    "<Leader>f", 
     "<CMD>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
