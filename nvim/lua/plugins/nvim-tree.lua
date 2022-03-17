@@ -49,27 +49,6 @@ vim.g.nvim_tree_icons = {
 
 local tree = require("nvim-tree.config")
 local tree_cb = tree.nvim_tree_callback
-
-function _G.close_all()
-  local lib = require('nvim-tree.lib')
-  local view = require('nvim-tree.view')
-
-  local function iter(entries)
-    for _, node in ipairs(entries) do
-      if node.entries and node.open then
-        iter(node.entries)
-        node.open = false
-      end
-    end
-  end
-
-  iter(lib.Tree.entries)
-  lib.redraw()
-
-  -- move cursor back to top of tree
-  view.set_cursor({2, 0})
-end
-
 local g = vim.g
 
 function _G.inc_width_ind()
@@ -108,7 +87,7 @@ require("nvim-tree").setup {
 			list = {
 				{ key = "l",							cb = tree_cb("edit")},
 				{ key = "h",							cb = tree_cb("close_node")},
-				{ key = "X",							cb = "<Cmd>lua _G.close_all()<CR>" },
+                { key = "X",                            action = "collapse_all" },
 				{ key = "<ESC>",						cb = tree_cb("close")},
 				{ key = '<TAB>',						cb = tree_cb('close') },
 				{ key = {"<C-h>"},						cb = "<CMD>exec ':NvimTreeResize ' . v:lua.dec_width_ind()<CR>"},
