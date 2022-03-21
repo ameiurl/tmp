@@ -873,6 +873,8 @@ nnoremap J <Esc>5<down>
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
+nnoremap <C-w> 8<C-e>
+nnoremap <C-i> 8<C-y>
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
