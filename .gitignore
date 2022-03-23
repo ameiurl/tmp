@@ -16,3 +16,4 @@ vlc/
 nvim/autoload/
 nvim/plugged/
 nvim/vim-plug/
+configstore/
