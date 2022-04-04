@@ -104,12 +104,12 @@ function _G.__telescope_commits()
 	}
 end
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap(
-    "n", 
-    "<Leader>h", 
-    ":<C-u>Telescope oldfiles<CR>", 
-    opts
-)
+-- vim.api.nvim_set_keymap(
+--     "n", 
+--     "<space>h", 
+--     ":<C-u>Telescope oldfiles<CR>", 
+--     opts
+-- )
 vim.api.nvim_set_keymap(
 	'n',
 	'<Leader>b',
@@ -130,6 +130,12 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	'n',
+	'<Leader>c',
+	'<cmd>lua __telescope_commits()<CR>',
+	opts
+)
+vim.api.nvim_set_keymap(
+	'n',
 	'<Leader>sg',
 	'<cmd>lua __telescope_grep()<CR>',
 	opts
@@ -147,12 +153,6 @@ vim.api.nvim_set_keymap(
     opts
 )
 vim.api.nvim_set_keymap(
-	'n',
-	'<Leader>c',
-	'<cmd>lua __telescope_commits()<CR>',
-	opts
-)
-vim.api.nvim_set_keymap(
     "n", 
     "<Leader>f", 
     "<CMD>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<CR>", 
@@ -162,6 +162,12 @@ vim.api.nvim_set_keymap(
     "n", 
     "<leader>ss", 
     "<CMD>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<CR>", 
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n", 
+    "<Leader>h", 
+    "<CMD>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
 vim.api.nvim_set_keymap(
