@@ -130,7 +130,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	'n',
-	'<Leader>ss',
+	'<Leader>sg',
 	'<cmd>lua __telescope_grep()<CR>',
 	opts
 )
@@ -142,20 +142,8 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
     "n", 
-    "<leader>gg", 
-    "<CMD>lua require('telescope.builtin').grep_string { search = 'n '.. vim.fn.expand('<cword>')}<CR>", 
-    opts
-)
-vim.api.nvim_set_keymap(
-    "n", 
     "<leader>sf", 
     "<CMD>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>", 
-    opts
-)
-vim.api.nvim_set_keymap(
-    "n", 
-    "<leader>sg", 
-    "<CMD>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
 vim.api.nvim_set_keymap(
@@ -170,24 +158,15 @@ vim.api.nvim_set_keymap(
     "<CMD>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
--- vim.api.nim_set_keymap(
---     'n', 
---     '<Space>s',
---     "<cmd>lua require('telescope').extensions.frecency.frecency({layout_strategy = 'vertical'})<CR>",
--- opts
--- )
--- vim.api.nvim_set_keymap(
-	--'n',
-	--',h',
-	-- path_display = {},
-	-- layout_strategy = 'horizontal',
-	-- layout_config = { preview_width = 0.55 },
-	-- '<cmd>lua require "telescope.builtin".help_tags()<CR>',
-	-- opts
---)
--- vim.api.nvim_set_keymap(
--- 	'n',
--- 	',pr',
--- 	'<cmd>lua require "telescope.builtin".extensions.pull_request()<CR>',
--- 	opts
--- )
+vim.api.nvim_set_keymap(
+    "n", 
+    "<leader>ss", 
+    "<CMD>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<CR>", 
+    opts
+)
+vim.api.nvim_set_keymap(
+    "n", 
+    "<leader>gg", 
+    "<CMD>lua require('telescope.builtin').grep_string { search = 'n '.. vim.fn.expand('<cword>')}<CR>", 
+    opts
+)
