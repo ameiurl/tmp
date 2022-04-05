@@ -1,6 +1,7 @@
 local actions = require 'telescope.actions'
 local sorters = require 'telescope.sorters'
 local previewers = require 'telescope.previewers'
+local finders = require "telescope.builtin"
 require("telescope").setup {
 	defaults = {
 		theme = "dropdown",
@@ -164,15 +165,51 @@ vim.api.nvim_set_keymap(
     "<CMD>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
-vim.api.nvim_set_keymap(
-    "n", 
-    "<Leader>h", 
-    "<CMD>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_ivy())<CR>", 
-    opts
-)
+-- vim.api.nvim_set_keymap(
+--     "n", 
+--     "<Leader>h", 
+--     "<CMD>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_ivy())<CR>", 
+--     opts
+-- )
 vim.api.nvim_set_keymap(
     "n", 
     "<leader>gg", 
     "<CMD>lua require('telescope.builtin').grep_string { search = 'n '.. vim.fn.expand('<cword>')}<CR>", 
     opts
 )
+-- Key mapping
+function map(mode, key, result, opts)
+  opts =
+    vim.tbl_extend(
+    "keep",
+    opts or {},
+    {
+      noremap = true,
+      silent = true,
+      expr = false
+    }
+  )
+  vim.api.nvim_set_keymap(mode, key, result, opts)
+end
+function move_cursor_from_tree()
+    local nr = vim.api.nvim_get_current_buf()
+    local buf = vim.api.nvim_buf_get_name(nr)
+    if string.find(buf, "NERD_tree") and nr > 1 then
+        cmd("wincmd l")
+    end
+end
+function TelescopeOpen(fn)
+    move_cursor_from_tree()
+    finders[fn](require("telescope.themes").get_dropdown({previewer = false}))
+end
+function TelescopeOpenPrewiev(fn)
+    move_cursor_from_tree()
+    finders[fn](require("telescope.themes").get_dropdown({layout_config = {width = 0.5}}))
+end
+map("n", "<Leader>h", "<CMD>lua TelescopeOpenPrewiev('oldfiles')<CR>")
+-- map("n", "<leader>bt", "<CMD>lua TelescopeOpenPrewiev('current_buffer_tags')<CR>")
+-- map("n", "<leader>ef", "<CMD>lua TelescopeOpen('file_browser')<CR>")
+-- map("n", "<leader>ff", "<CMD>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<CR>")
+-- map("n", "<leader>fe", "<CMD>lua require('telescope.builtin').file_browser(require('telescope.themes').get_ivy())<CR>")
+-- map("n", "<leader>fg", "<CMD>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy())<CR>")
+-- map("n", "<leader>bb", "<CMD>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy())<CR>")
