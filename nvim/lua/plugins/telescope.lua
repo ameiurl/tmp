@@ -91,17 +91,10 @@ function _G.__telescope_buffers()
         )
     end
 function _G.__telescope_grep()
-	require('telescope.builtin').live_grep {
-		path_display = {},
-		layout_strategy = 'horizontal',
-		layout_config = { preview_width = 0.55 },
-	}
+	require('telescope.builtin').live_grep(options)
 end
 function _G.__telescope_commits()
-	require('telescope.builtin').git_commits {
-		layout_strategy = 'horizontal',
-		layout_config = { preview_width = 0.55 },
-	}
+	require('telescope.builtin').git_commits(options)
 end
 local opts = { noremap = true, silent = true }
 -- vim.api.nvim_set_keymap(
