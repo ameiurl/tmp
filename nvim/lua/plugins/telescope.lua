@@ -72,37 +72,31 @@ function _G.__telescope_files()
         require('telescope.builtin').find_files(options)
     end
 end
-function _G.__telescope_buffers()
-        require('telescope.builtin').buffers(
-            require('telescope.themes').get_dropdown {
-                previewer = false,
-                only_cwd = vim.fn.haslocaldir() == 1,
-                show_all_buffers = false,
-                sort_mru = true,
-                ignore_current_buffer = true,
-                sorter = require('telescope.sorters').get_substr_matcher(),
-                selection_strategy = 'closest',
-                path_display = { 'shorten' },
-                layout_strategy = 'center',
-                winblend = 0,
-                layout_config = { width = 70 },
-                color_devicons = true,
-            }
-        )
-    end
 function _G.__telescope_grep()
 	require('telescope.builtin').live_grep(options)
 end
 function _G.__telescope_commits()
 	require('telescope.builtin').git_commits(options)
 end
+function _G.__telescope_buffers()
+    require('telescope.builtin').buffers(
+        require('telescope.themes').get_dropdown {
+            previewer = false,
+            only_cwd = vim.fn.haslocaldir() == 1,
+            show_all_buffers = false,
+            sort_mru = true,
+            ignore_current_buffer = true,
+            sorter = require('telescope.sorters').get_substr_matcher(),
+            selection_strategy = 'closest',
+            path_display = { 'shorten' },
+            layout_strategy = 'center',
+            winblend = 0,
+            layout_config = { width = 70 },
+            color_devicons = true,
+        }
+    )
+end
 local opts = { noremap = true, silent = true }
--- vim.api.nvim_set_keymap(
---     "n", 
---     "<space>h", 
---     ":<C-u>Telescope oldfiles<CR>", 
---     opts
--- )
 vim.api.nvim_set_keymap(
 	'n',
 	'<Leader>b',
