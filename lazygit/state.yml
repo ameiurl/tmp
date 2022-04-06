@@ -1,8 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
-- /server/www/xmzhly
 - /server/www/erp_doraemon
 - /home/amei/.config
+- /server/www/xmzhly
+- /server/www/duoduo_h5
+- /server/www/duoduo_admin
+- /server
 - /server/www/longyan_www
 - /server/www/longyan_szdj
 startuppopupversion: 5
