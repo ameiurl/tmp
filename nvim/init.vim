@@ -363,7 +363,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
 Plug 'akinsho/bufferline.nvim'
 Plug 'glepnir/galaxyline.nvim'
-Plug 'ameiurl/zend.vim'
+Plug 'ameiurl/zephyr-nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -1007,7 +1007,7 @@ endfunc
 set t_Co=256
 
 " colorscheme molokai
-colorscheme zend
+colorscheme zephyr 
 " colorscheme deus
 " colorscheme onedark
 

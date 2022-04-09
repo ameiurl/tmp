@@ -164,7 +164,7 @@ section.right[5] = {
 section.right[6] = {
   LineInfo = {
     provider = "LineColumn",
-    separator = "",
+    separator = " ",
     separator_highlight = {nord_colors.blue, nord_colors.line_bg},
     highlight = {nord_colors.gray, nord_colors.line_bg}
   }
