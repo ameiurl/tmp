@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # xsel共用粘贴板
-echo '[*] pacman installing python3 neovim nodejs npm xsel lua'
+echo '[*] pacman installing python3 neovim nodejs npm xsel lua ripgrep'
 sudo pacman -S python3 neovim nodejs npm xsel lua
 
 # echo '[*] install pip';
