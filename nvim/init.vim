@@ -359,8 +359,10 @@ set clipboard+=unnamedplus
 
 """""""" 插件管理vim-plug""""""""
 call plug#begin('~/.config/nvim/plugged')
-Plug 'vim-airline/vim-airline'                     " 状态栏增强
-Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
+" Plug 'vim-airline/vim-airline'                     " 状态栏增强
+" Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
+Plug 'akinsho/bufferline.nvim'
+Plug 'glepnir/galaxyline.nvim'
 Plug 'ameiurl/zend.vim'
 
 " Treesitter
@@ -756,6 +758,8 @@ require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.nvim-autopairs')
 require('plugins.comment')
+require('plugins.bufferline')
+require('plugins.galaxyline')
 EOF
 
 
