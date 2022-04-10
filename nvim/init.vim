@@ -359,8 +359,6 @@ set clipboard+=unnamedplus
 
 """""""" 插件管理vim-plug""""""""
 call plug#begin('~/.config/nvim/plugged')
-" Plug 'vim-airline/vim-airline'                     " 状态栏增强
-" Plug 'vim-airline/vim-airline-themes'              " 状态栏增强
 Plug 'akinsho/bufferline.nvim'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'ameiurl/zephyr-nvim'
@@ -541,90 +539,6 @@ let g:agit_no_default_mappings = 1
 " ==
 let g:suda_smart_edit = 1
 
-
-" ==
-" == vim-airline
-" ==
-let g:airline_theme="light" 
-" let g:airline_powerline_fonts=1
-" let g:airline#extensions#tabline#enabled=1    " enable tabline
-let g:airline#extensions#tabline#buffer_nr_show=1    " 显示buffer行号
-let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline_section_x = '%{ScrollStatus()}'
-" let g:airline_section_y = airline#section#create_right(['filetype'])
-" let g:airline_section_z = airline#section#create([
-"             \ '%#__accent_bold#%3l%#__restore__#/%L', ' ',
-"             \ '%#__accent_bold#%3v%#__restore__#/%3{virtcol("$") - 1}',
-            " \ ])
-"Airline Theme
-" let g:airline_theme='nord_minimal'
-"
-let g:nord_uniform_diff_background = 0
-"
-" Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'searchcount', 'tabline', 'vista', 'coc']
-
-" Do not draw separators for empty sections (only for the active window) >
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#enabled = 1
-
-" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" Custom setup that removes filetype/whitespace from default vim airline bar
-let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z', 'warning', 'error']]
-let g:airline#extensions#default#section_truncate_width = {
-      \ 'z': 85,
-      \ 'warning': 80,
-      \ 'error': 80,
-      \ }
-
-" Customize vim airline per filetype
-" 'list'      - Only show file type plus current line number out of total
-let g:airline_filetype_overrides = {
-  \ 'list': [ '%y', '%l/%L'],
-  \ }
-
-" Enable powerline fonts
-let g:airline_powerline_fonts = 1
-
-" Enable caching of syntax highlighting groups
-let g:airline_highlighting_cache = 1
-
-" Define custom airline symbols
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_right_sep = '«'
-" let g:airline_symbols.branch = '⎇'
-
-" airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-
-" Sections
-"
-function! AirlineInit()
-  let g:airline_section_a = airline#section#create(['mode'])
-  let g:airline_section_b = airline#section#create(['branch'])
-  let g:airline_section_c = airline#section#create(['hunks'])
-  let g:airline_section_x = airline#section#create(['%f'])
-  " let g:airline_section_z = airline#section#create(['linenr'])
-  let g:airline_section_z = airline#section#create([
-            \ '%#__accent_bold#%3l%#__restore__#/%L', '',
-            \ '%#__accent_bold#%3v%#__restore__#/%{virtcol("$") - 1}',
-            \ ])
-endfunction
-autocmd User AirlineAfterInit call AirlineInit()
-
-" Don't show git changes to current file in airline
-let g:airline#extensions#hunks#enabled=0
 
 " ==
 " == autopairs
