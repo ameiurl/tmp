@@ -34,7 +34,7 @@ set cursorline
 "set t_ti= t_te=
 
 " 鼠标暂不启用, 键盘党....
-set mouse-=a
+set mouse+=a
 
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
 set scrolloff=7

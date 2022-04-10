@@ -1,7 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
-- /server/www/erp_doraemon
 - /home/amei/.config
+- /home/amei/.config/nvim/plugged/zephyr-nvim
+- /server/www/erp_doraemon
 - /server/www/xmzhly
 - /server/www/duoduo_h5
 - /server/www/duoduo_admin
