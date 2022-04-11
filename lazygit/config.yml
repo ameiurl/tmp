@@ -13,13 +13,13 @@ gui:
   scrollheight: 2
   scrollpastbottom: true
   showCommandLog: false
-  theme:
-    # lightTheme: true
-    # activeBorderColor:
-      # - blue
-      # - bold
-    # inactiveBorderColor:
-      # - black
+  # theme:
+  #    lightTheme: true
+  #    activeBorderColor:
+  #     - blue
+  #     - bold
+  #    inactiveBorderColor:
+  #     - black
 reporting: "off"
 splashupdatesindex: 0
 startuppopupversion: 1

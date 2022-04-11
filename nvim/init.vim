@@ -392,7 +392,7 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdow
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
 Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
-Plug 'cohama/agit.vim'
+Plug 'kdheepak/lazygit.nvim'
 
 " vim补助
 Plug 'ryanoasis/vim-devicons'
@@ -527,11 +527,11 @@ let g:agit_no_default_mappings = 1
 " ==
 " == lazygit 
 " ==
-" nnoremap <silent> <leader>g :LazyGit<CR>
-" let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-" let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
-" let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
-" let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
+nnoremap <silent> <leader>g :LazyGit<CR>
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 
 
 " ==
@@ -664,6 +664,8 @@ nnoremap <silent> <Leader>t :<C-u>Vista!!<CR>
 autocmd FileType vista nnoremap <silent><Esc> :Vista!<CR>
 let g:vista_ignore_kinds = ['Variable']
 
+" highlightedyank
+let g:highlightedyank_highlight_duration = 500
 
 lua <<EOF
 require('plugins.nvim-tree')
@@ -950,25 +952,3 @@ colorscheme zephyr
 "    " autocmd Syntax * call matchadd('htmlLink', '<a\|<\/a>\|<img\|src\|href\|<input\|<form\|</form>')
 "  endif
 "endif
-
-" highlightedyank
-let g:highlightedyank_highlight_duration = 500
-highlight HighlightedyankRegion ctermfg=black ctermbg=214
-
-" telescope
-" highlight TelescopeSelectionColor ctermfg=white ctermbg=yellow
-highlight TelescopeMatchingColor ctermfg=88
-" highlight default link TelescopeSelection TelescopeSelectionColor 
-highlight default link TelescopeMatching TelescopeMatchingColor 
-
-" Agit
-highlight agitDiffRemoveColor ctermfg=88
-highlight agitDiffAddColor ctermfg=28
-highlight agitDiffFileNameColor ctermfg=blue
-highlight agitDiffIndexColor ctermfg=blue
-
-hi def link agitDiffRemove agitDiffRemoveColor 
-hi def link agitDiffAdd agitDiffAddColor
-hi def link agitDiffFileName agitDiffFileNameColor 
-hi def link agitDiffIndex agitDiffIndexColor 
-hi def link agitDiffSubname agitDiffIndexColor 
