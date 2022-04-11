@@ -11,7 +11,7 @@ require "nvim-treesitter.configs".setup {
 	},
 	highlight = {
 		enable = true,              -- false will disable the whole extension
-		disable = {"php",'html','javascript'},  -- list of language that will be disabled
+		disable = {"php",'html','javascript', 'lua'},  -- list of language that will be disabled
 	},
 	indent = {
 		enable = false
