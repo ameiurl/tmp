@@ -319,44 +319,6 @@ runtime macros/matchit.vim
 " 系统剪贴板
 set clipboard+=unnamedplus
 
-"最后一个窗口，quickfix一起关闭
-"aug QFClose
-"	au!
-"	au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
-"aug END
-"
-""##### auto fcitx  ###########
-"let g:input_toggle = 1
-"function! Fcitx2en()
-"   let s:input_status = system("fcitx-remote")
-"   if s:input_status == 2
-"      let g:input_toggle = 1
-"      let l:a = system("fcitx-remote -c")
-"   endif
-"endfunction
-"
-"function! Fcitx2zh()
-"   let s:input_status = system("fcitx-remote")
-"   if s:input_status != 2 && g:input_toggle == 1
-"      let l:a = system("fcitx-remote -o")
-"      let g:input_toggle = 0
-"   endif
-"endfunction
-"
-"set ttimeoutlen=50
-""Exit insert mode
-"autocmd InsertLeave * call Fcitx2en()
-""Enter insert mode
-"autocmd InsertEnter * call Fcitx2zh()
-"##### auto fcitx end ######
-
-"if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	"silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				"\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	"autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
-
-
 """""""" 插件管理vim-plug""""""""
 call plug#begin('~/.config/nvim/plugged')
 Plug 'akinsho/bufferline.nvim'
@@ -715,21 +677,6 @@ map <leader>0 :blast<cr>
 map <leader>d :bd<cr>
 map <C-o>     :b#<CR>
 
-" Toggles between the active and last active tab "
-" Switch to last-active tab
-"if !exists('g:Lasttab')
-    "let g:Lasttab = 1
-    "let g:Lasttab_backup = 1
-"endif
-"autocmd! TabLeave * let g:Lasttab_backup = g:Lasttab | let g:Lasttab = tabpagenr()
-"autocmd! TabClosed * let g:Lasttab = g:Lasttab_backup
-"nnoremap <silent> <c-o> :exe "tabn " . g:Lasttab<cr>
-
-" 新建tab  Ctrl+t
-"nnoremap <C-t>     :tabnew<CR>
-"inoremap <C-t>     <Esc>:tabnew<CR>
-
-
 " ===============================================
 " === 窗口管理===================================
 " ===============================================
@@ -900,55 +847,9 @@ endfunc
 " Theme Settings  主题设置
 "==========================================
 
-" Set extra options when running in GUI mode
-"if has("gui_running")
-"    set guifont=Monaco:h14
-"    if has("gui_gtk2")   "GTK2
-"        set guifont=Monaco\ 12,Monospace\ 12
-"    endif
-"    set guioptions-=T
-"    set guioptions+=e
-"    set guioptions-=r
-"    set guioptions-=L
-"    set guitablabel=%M\ %t
-"    set showtabline=1
-"    set linespace=2
-"    set noimd
-"    set t_Co=256
-"endif
-
 " theme主题
 "set background=dark
 
 set t_Co=256
 
-" colorscheme molokai
 colorscheme zephyr 
-" colorscheme deus
-" colorscheme onedark
-
-"----------------------------------------------------------------------
-" 状态栏设置
-"----------------------------------------------------------------------
-"set statusline=                                 " 清空状态了
-"set statusline+=\ %F                            " 文件名
-"set statusline+=\ [%1*%M%*%n%R%H]               " buffer 编号和状态
-"set statusline+=%=                              " 向右对齐
-"set statusline+=\ %y                            " 文件类型
-
-" 最右边显示文件编码和行号等信息，并且固定在一个 group 中，优先占位
-"set statusline+=\ %0(%{&fileformat}\ [%{(&fenc==\"\"?&enc:&fenc).(&bomb?\",BOM\":\"\")}]\ %v:%l/%L%)
-" 命令行（在状态行下）的高度，默认为1，这里是2
-"set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-
-" 设置可以高亮的关键字
-"if has("autocmd")
-"  " Highlight TODO, FIXME, NOTE, etc.
-"  if v:version > 701
-"    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
-"    autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
-"    autocmd Syntax * call matchadd('phpTodo', '<?php\|?>\|<?=')
-"    autocmd Syntax * call matchadd('phpKeyword', 'empty\|isset')
-"    " autocmd Syntax * call matchadd('htmlLink', '<a\|<\/a>\|<img\|src\|href\|<input\|<form\|</form>')
-"  endif
-"endif
