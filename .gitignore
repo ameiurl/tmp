@@ -17,3 +17,4 @@ nvim/autoload/
 nvim/plugged/
 nvim/vim-plug/
 configstore/
+lazygit/state.yml
