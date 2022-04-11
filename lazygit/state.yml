@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/amei/dotfiles
+- /home/amei/dotfiles/nvim/plugged/zephyr-nvim
 - /server/www/erp_doraemon
 - /home/amei/.config
 - /home/amei/.config/nvim/plugged/zephyr-nvim

@@ -22,10 +22,11 @@ local one_dark_colors = {
 }
 
 local nord_colors = {
-  bg       = "NONE",
-  -- bg = "#2E3440",
+  -- bg       = "NONE",
+  bg       = "#F5F5F5",
   fg       = "#81A1C1",
-  line_bg  = "NONE",
+  -- line_bg  = "NONE",
+  line_bg  = "#F5F5F5",
   lbg      = "NONE",
   -- lbg = "#3B4252",
   fg_green = "#8FBCBB",
