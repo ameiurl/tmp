@@ -4,6 +4,7 @@ if [[ ! -d $PLUG_DIR ]]; then
 	curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/zimfw/install/master/install.zsh
 	rm ~/.zimrc
 	ln -s ~/.config/zsh/zimrc ~/.zimrc
+	echo "source ~/.config/zsh/zshrc">>~/.zshrc
 	source ~/.zim/zimfw.zsh
 	zimfw install
 fi
