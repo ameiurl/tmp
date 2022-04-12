@@ -324,6 +324,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'akinsho/bufferline.nvim'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'ameiurl/zephyr-nvim'
+Plug 'ryanoasis/vim-devicons'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -346,6 +347,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " coc自动补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ameiurl/vim-snippets'
+Plug 'liuchengxu/vista.vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -357,7 +359,6 @@ Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
 Plug 'kdheepak/lazygit.nvim'
 
 " vim补助
-Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
 Plug 'lambdalisue/suda.vim'                        " root权限直接输入密码
 Plug 'mg979/vim-visual-multi',{'branch': 'master'} " <c-m>批量量更新
@@ -370,7 +371,6 @@ Plug 'windwp/nvim-autopairs'
 Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
 Plug 'machakann/vim-highlightedyank'			   " 复制效果
 Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
-Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 let mapleader=','
