@@ -349,6 +349,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ameiurl/vim-snippets'
 Plug 'liuchengxu/vista.vim'
 
+" lsp
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'williamboman/nvim-lsp-installer'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdownPreview
@@ -638,6 +649,8 @@ require('plugins.nvim-autopairs')
 require('plugins.comment')
 require('plugins.bufferline')
 require('plugins.galaxyline')
+--require('plugins.lsp')
+--require('plugins.vista')
 EOF
 
 
