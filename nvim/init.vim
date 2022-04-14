@@ -31,7 +31,7 @@ set cursorline
 
 " 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
 " 好处：误删什么的，如果以前屏幕打开，可以找回
-"set t_ti= t_te=
+set t_ti= t_te=
 
 " 鼠标暂不启用, 键盘党....
 set mouse+=a
@@ -75,14 +75,11 @@ set showmode
 " 三种缩进模式
 set ai si ci
 
-" set winwidth=79
-
 " Always show the status line - use 2 lines for the status bar
 set laststatus=2
 
 " 显示行号
 set number
-
 
 " 括号配对情况, 跳转并高亮一下匹配的括号
 set showmatch
@@ -298,19 +295,6 @@ endfunction
 " 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" tags; 
-set tags=./.tags;,.tags
-
-" 设置退出vim后，不显示文件内容
-if &term =~ "xterm"
-    " SecureCRT versions prior to 6.1.x do not support 4-digit DECSET
-    "    let &t_ti = "\<Esc>[?1049h"
-    "    let &t_te = "\<Esc>[?1049l"
-    " Use 2-digit DECSET instead
-    let &t_ti = "\<Esc>[?47h"
-    let &t_te = "\<Esc>[?47l"
 endif
 
 "标签高亮匹配
