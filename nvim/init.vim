@@ -361,6 +361,7 @@ Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取�
 Plug 'junegunn/vim-easy-align'					   " <Leader>a符号 快速对齐
 Plug 'numToStr/Comment.nvim'					   " 快速注释/解开注释
 Plug 'kshenoy/vim-signature'					   " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
+Plug 'Yilin-Yang/vim-markbar'
 Plug 'hrsh7th/vim-eft'							   " 增强f|t操作，在摁下f|t时，会高亮可能需要跳转的字母
 Plug 'windwp/nvim-autopairs'
 Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
@@ -623,6 +624,9 @@ let g:vista_ignore_kinds = ['Variable']
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 500
+
+" vim-markbar
+nmap <Leader>m <Plug>ToggleMarkbar
 
 lua <<EOF
 require('plugins.nvim-tree')
