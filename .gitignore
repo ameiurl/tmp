@@ -10,11 +10,10 @@ VirtualBox/
 Kingsoft/
 QtProject.conf
 mimeapps.list
-lazygit/.config/
 picom/
 vlc/
+configstore/
 nvim/autoload/
 nvim/plugged/
 nvim/vim-plug/
-configstore/
 lazygit/state.yml
