@@ -2,7 +2,7 @@ vim.api.nvim_command("set foldmethod=expr")
 vim.api.nvim_command("set foldexpr=nvim_treesitter#foldexpr()")
 require "nvim-treesitter.configs".setup {
 	--ensure_installed = "maintained",
-	ensure_installed = {"javascript", "php", "lua", "html"},     -- one of "all", "language", or a list of languages
+	ensure_installed = {"javascript", "php", "lua", "html", "vim"},     -- one of "all", "language", or a list of languages
 	playground = {
 		enable = true,
 		disable = {},
@@ -10,8 +10,8 @@ require "nvim-treesitter.configs".setup {
 		persist_queries = false -- Whether the query persists across vim sessions
 	},
 	highlight = {
-		enable = true,              -- false will disable the whole extension
-		disable = {"php",'html','javascript', 'lua'},  -- list of language that will be disabled
+		enable = false,              -- false will disable the whole extension
+		disable = {},  -- list of language that will be disabled
 	},
 	indent = {
 		enable = false
@@ -30,7 +30,7 @@ require "nvim-treesitter.configs".setup {
 	    enable = true 
 	},
 	incremental_selection = {
-		enable = false,
+		enable = true,
 		keymaps = {
 			init_selection = "<CR>", -- maps in normal mode to init the node/scope selection
 			node_incremental = "<CR>", -- increment to the upper named parent

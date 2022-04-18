@@ -357,7 +357,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
 Plug 'lambdalisue/suda.vim'                        " root权限直接输入密码
 Plug 'mg979/vim-visual-multi',{'branch': 'master'} " <c-m>批量量更新
-Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取消选择区域
+" Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取消选择区域
 Plug 'junegunn/vim-easy-align'					   " <Leader>a符号 快速对齐
 Plug 'numToStr/Comment.nvim'					   " 快速注释/解开注释
 Plug 'chentau/marks.nvim'
@@ -585,8 +585,8 @@ let g:VM_maps                       = {}
 "let g:VM_custom_motions             = {'n': 'h', 'i': 'l', 'u': 'k', 'e': 'j', 'N': '0', 'I': '$', 'h': 'e'}
 "let g:VM_maps['i']                  = 'm'
 "let g:VM_maps['I']                  = 'M'
-let g:VM_maps['Find Under']         = '<C-m>'
-let g:VM_maps['Find Subword Under'] = '<C-m>'
+let g:VM_maps['Find Under']         = '<C-k>'
+let g:VM_maps['Find Subword Under'] = '<C-k>'
 let g:VM_maps['Find Next']          = ''
 let g:VM_maps['Find Prev']          = ''
 let g:VM_maps['Remove Region']      = 'q'
