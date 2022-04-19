@@ -357,7 +357,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
 Plug 'lambdalisue/suda.vim'                        " root权限直接输入密码
 Plug 'mg979/vim-visual-multi',{'branch': 'master'} " <c-m>批量量更新
-" Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取消选择区域
+Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取消选择区域
 Plug 'junegunn/vim-easy-align'					   " <Leader>a符号 快速对齐
 Plug 'numToStr/Comment.nvim'					   " 快速注释/解开注释
 Plug 'chentau/marks.nvim'
