@@ -758,9 +758,11 @@ nnoremap ` '
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
+imap <C-s> <Esc>:w<CR>
+nmap <C-s> :w<CR>
 
 " Quickly close the current window
-nnoremap <leader>q :q<CR>
+" nnoremap <leader>q :q<CR>
 
 " Delete find pair
 nnoremap dy d%
@@ -795,6 +797,15 @@ noremap <left> :vertical res +10<CR>
 
 " Disable the default s key
 noremap s <Nop>
+
+func! ToggleQuickFix()
+    if getqflist({'winid' : 0}).winid
+        cclose
+    else
+        copen
+    endif
+endfunction
+map <Leader>q :call ToggleQuickFix()<CR>
 
 " w!! to sudo & write a file
 "cmap w!! w !sudo tee >/dev/null %
