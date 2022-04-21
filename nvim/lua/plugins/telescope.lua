@@ -169,3 +169,10 @@ vim.api.nvim_set_keymap(
     "<CMD>lua require('telescope.builtin').marks(require('telescope.themes').get_ivy())<CR>", 
     opts
 )
+vim.api.nvim_set_keymap(
+    "n", 
+    "<leader><leader>", 
+    "<CMD>lua require('telescope.builtin').builtin(require('telescope.themes').get_ivy())<CR>", 
+    opts
+)
+
