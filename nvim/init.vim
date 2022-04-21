@@ -734,10 +734,13 @@ vnoremap > >gv
 " Go to home and end using capitalized directions
 " noremap H ^
 " noremap L $
+nnoremap gh g^
+nnoremap gl g$
 
 " Shift+HJKL快速移动
 nnoremap K <Esc>5<up>
 nnoremap J <Esc>5<down>
+nnoremap gj J
 
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 5<C-e>
