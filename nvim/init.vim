@@ -360,11 +360,11 @@ Plug 'mg979/vim-visual-multi',{'branch': 'master'} " <c-m>批量量更新
 Plug 'terryma/vim-expand-region'                   " v/V 快速选择区域/取消选择区域
 Plug 'junegunn/vim-easy-align'					   " <Leader>a符号 快速对齐
 Plug 'numToStr/Comment.nvim'					   " 快速注释/解开注释
-Plug 'chentau/marks.nvim'
 Plug 'hrsh7th/vim-eft'							   " 增强f|t操作，在摁下f|t时，会高亮可能需要跳转的字母
 Plug 'windwp/nvim-autopairs'
 Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
 Plug 'machakann/vim-highlightedyank'			   " 复制效果
+Plug 'kshenoy/vim-signature'					   " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
 Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
 call plug#end()
 
@@ -624,10 +624,6 @@ let g:vista_ignore_kinds = ['Variable']
 " highlightedyank
 let g:highlightedyank_highlight_duration = 500
 
-" marks 
-nmap <Leader>m :MarksQFListBuf<CR>
-nmap <LocalLeader>m :MarksQFListGlobal<CR>
-
 lua <<EOF
 require('plugins.nvim-tree')
 require('plugins.nvim-treesitter')
@@ -635,7 +631,6 @@ require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.nvim-autopairs')
 require('plugins.comment')
-require('plugins.marks')
 require('plugins.bufferline')
 require('plugins.galaxyline')
 --require('plugins.lsp')

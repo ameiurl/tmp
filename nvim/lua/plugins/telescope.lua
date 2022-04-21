@@ -163,3 +163,9 @@ vim.api.nvim_set_keymap(
     "<CMD>lua require('telescope.builtin').grep_string { search = 'n '.. vim.fn.expand('<cword>')}<CR>", 
     opts
 )
+vim.api.nvim_set_keymap(
+    "n", 
+    "<leader>m", 
+    "<CMD>lua require('telescope.builtin').marks(require('telescope.themes').get_ivy())<CR>", 
+    opts
+)
