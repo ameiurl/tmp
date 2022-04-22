@@ -704,8 +704,6 @@ nnoremap <silent> g* g*zz
 xnoremap p "_dP
 
 " 调整缩进后自动选中，方便再次操作
-vmap <tab> >gv
-vmap <s-tab> <gv
 vnoremap < <gv
 vnoremap > >gv
 
@@ -727,14 +725,9 @@ nnoremap ` '
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
-imap <C-s> <Esc>:w<CR>
-nmap <C-s> :w<CR>
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
-
-" 复制选中区到系统剪切板中
-vnoremap <leader>y "+y
 
 " select block
 nnoremap <leader>v V`}
