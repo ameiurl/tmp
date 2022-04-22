@@ -475,12 +475,6 @@ let g:far#source='ag'
 " :Farr foo bar **/*.py   t s u
 noremap <LocalLeader>f :Far  **/*.php<left><left><left><left><left><left><left><left><left>
 
-" ===
-" === Agit
-" ===
-nnoremap <LEADER>gl :Agit<CR>
-let g:agit_no_default_mappings = 1
-
 " ==
 " == lazygit 
 " ==
@@ -707,30 +701,13 @@ nnoremap <silent> g* g*zz
 " ===============================================
 " === 快捷键 ===================================
 " ===============================================
-
-"nnoremap cc dd
-"nnoremap x "_x
-"nnoremap X "_X
-"nnoremap d "_d
-"nnoremap dd "_dd
-"nnoremap D "_D
-"vnoremap d "_d
-"vnoremap dd "_dd
 xnoremap p "_dP
 
 " 调整缩进后自动选中，方便再次操作
-"vmap <tab> >gv
-"vmap <s-tab> <gv
+vmap <tab> >gv
+vmap <s-tab> <gv
 vnoremap < <gv
 vnoremap > >gv
-
-" map Y y$
-
-" Go to home and end using capitalized directions
-" noremap H ^
-" noremap L $
-nnoremap gh g^
-nnoremap gl g$
 
 " Shift+HJKL快速移动
 nnoremap K <Esc>5<up>
@@ -744,15 +721,9 @@ nnoremap <C-y> 5<C-y>
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" Map ; to : and save a million keystrokes 用于快速进入命令行
-"nnoremap ; :
-
 " 交换 ' `, 使得可以快速使用'跳到marked位置
 nnoremap ' `
 nnoremap ` '
-
-" 选中并高亮最后一次插入的内容
-"nnoremap gv `[v`]
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
@@ -760,16 +731,19 @@ imap <C-s> <Esc>:w<CR>
 nmap <C-s> :w<CR>
 
 " Quickly close the current window
-" nnoremap <leader>q :q<CR>
+nnoremap <leader>q :q<CR>
+
+" 复制选中区到系统剪切板中
+vnoremap <leader>y "+y
+
+" select block
+nnoremap <leader>v V`}
+
+" 选中并高亮最后一次插入的内容
+nnoremap gv `[v`]
 
 " Delete find pair
 nnoremap dy d%
-
-" 复制选中区到系统剪切板中
-"vnoremap <leader>y "+y
-
-" select block
-"nnoremap <leader>v V`}
 
 " 去掉搜索高亮
 noremap <silent><Leader>/ :nohls<CR>
@@ -795,18 +769,6 @@ noremap <left> :vertical res +10<CR>
 
 " Disable the default s key
 noremap s <Nop>
-
-func! ToggleQuickFix()
-    if getqflist({'winid' : 0}).winid
-        cclose
-    else
-        copen
-    endif
-endfunction
-map <Leader>q :call ToggleQuickFix()<CR>
-
-" w!! to sudo & write a file
-"cmap w!! w !sudo tee >/dev/null %
 
 " Compile function
 noremap <Leader>p :call CompileRunGcc()<CR>
