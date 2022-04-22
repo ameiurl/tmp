@@ -3,12 +3,12 @@ zmodule git
 zmodule input
 zmodule termtitle
 zmodule utility
-zmodule completion
 zmodule git-info
 zmodule duration-info
 zmodule prompt-pwd
 zmodule magicmace
 zmodule zsh-users/zsh-completions
+zmodule completion
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-history-substring-search
 zmodule zdharma/fast-syntax-highlighting
