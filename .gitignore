@@ -8,8 +8,6 @@ dconf/
 navicat/
 VirtualBox/
 Kingsoft/
-QtProject.conf
-mimeapps.list
 picom/
 vlc/
 configstore/
@@ -17,3 +15,5 @@ nvim/autoload/
 nvim/plugged/
 nvim/vim-plug/
 lazygit/state.yml
+QtProject.conf
+mimeapps.list
