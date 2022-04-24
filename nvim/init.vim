@@ -735,9 +735,6 @@ nnoremap <leader>v V`}
 " 选中并高亮最后一次插入的内容
 nnoremap gv `[v`]
 
-" Delete find pair
-nnoremap dy d%
-
 " 去掉搜索高亮
 noremap <silent><Leader>/ :nohls<CR>
 
