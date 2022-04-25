@@ -297,9 +297,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-"标签高亮匹配
-runtime macros/matchit.vim 
-
 " 系统剪贴板
 set clipboard+=unnamedplus
 
