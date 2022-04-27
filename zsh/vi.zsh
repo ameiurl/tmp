@@ -12,6 +12,8 @@ bindkey -M vicmd "u" undo
 #bindkey -M vicmd "-" vi-rev-repeat-search
 bindkey -M vicmd "=" vi-repeat-search
 bindkey -M vicmd "e" vi-forward-word-end
+bindkey -M vicmd "^k" history-substring-search-up
+bindkey -M vicmd "^j" history-substring-search-down
 
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
