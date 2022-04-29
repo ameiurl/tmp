@@ -4,6 +4,6 @@ nginx/conf.d/*
 gogs/gogs/log/
 gogs/ssh/
 /logs
-/mysql
-!/mysql/conf/mysqld.cnf
+/mysql/*
+!/mysql/conf/
 /redis
