@@ -8,6 +8,7 @@ services:
       - "3306:3306"
     volumes:
       - /server/mysql:/var/lib/mysql
+      - /server/mysql/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     environment:
       MYSQL_ROOT_PASSWORD: 123456
   myredis:
