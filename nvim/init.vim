@@ -300,6 +300,7 @@ endif
 " 系统剪贴板
 set clipboard+=unnamedplus
 
+
 """""""" 插件管理vim-plug""""""""
 call plug#begin('~/.config/nvim/plugged')
 Plug 'akinsho/bufferline.nvim'
