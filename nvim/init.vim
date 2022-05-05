@@ -678,10 +678,10 @@ nnoremap j gj
 nnoremap gj j"
 
 " Ctrl+j k h l窗口直接跳转
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+" nmap <C-j> <C-W>j
+" nmap <C-k> <C-W>k
+" nmap <C-h> <C-W>h
+" nmap <C-l> <C-W>l
 
 " 绑定插入模式下的方向键
 imap <C-h> <Left>
