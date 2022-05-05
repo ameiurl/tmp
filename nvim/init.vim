@@ -755,6 +755,7 @@ noremap <up> :res +5<CR>
 noremap <down> :res -5<CR>
 noremap <right> :vertical res -10<CR>
 noremap <left> :vertical res +10<CR>
+nmap gh /<c-r>=expand("<cword>")<CR><CR>N
 
 " Disable the default s key
 noremap s <Nop>
