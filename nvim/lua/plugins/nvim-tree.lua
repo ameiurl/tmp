@@ -6,7 +6,7 @@ vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeFindFile<CR>', {
 	noremap = true,
 	silent = true
 })
-vim.g.nvim_tree_indent_markers = 1
+-- vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 45
 vim.g.nvim_tree_show_icons = {
@@ -69,10 +69,10 @@ require("nvim-tree").setup {
 	update_focused_file = {
 		update_cwd = true
 	},
-	update_to_buf_dir   = {
-		enable = true,
-		auto_open = true,
-	},
+	-- update_to_buf_dir   = {
+	-- 	enable = true,
+	-- 	auto_open = true,
+	-- },
 	filters = {
         dotfiles = false,
         custom = {'.git', '.cache'}
