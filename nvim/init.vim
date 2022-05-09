@@ -725,9 +725,18 @@ nnoremap ` '
 nnoremap <leader>w :w<CR>
 
 " Quickly close the current window
-nnoremap <leader>q :q<CR>
+" nnoremap <leader>q :q<CR>
 imap <C-s> <Esc>:w<CR>
 nmap <C-s> :w<CR>
+
+func! ToggleQuickFix()
+    if getqflist({'winid' : 0}).winid
+        cclose
+    else
+        copen
+    endif
+endfunction
+map <Leader>q :call ToggleQuickFix()<CR>
 
 " select block
 nnoremap <leader>v V`}
