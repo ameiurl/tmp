@@ -91,7 +91,7 @@ function _G.__telescope_buffers()
             path_display = { 'shorten' },
             layout_strategy = 'center',
             winblend = 0,
-            layout_config = { width = 70 },
+            layout_config = { width = 70,height = 25 },
             color_devicons = true,
         }
     )
