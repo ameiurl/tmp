@@ -51,6 +51,8 @@ set noerrorbells
 set t_vb=
 set tm=500
 
+set nofixendofline
+
 " Remember info about open buffers on close
 "set viminfo^=%
 
