@@ -6,46 +6,9 @@ vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeFindFile<CR>', {
 	noremap = true,
 	silent = true
 })
--- vim.g.nvim_tree_indent_markers = 1
+
 vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 45
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  files = 1,
-  folders = 1,
-  folder_arrows = 0,
-}
-
-vim.g.nvim_tree_icons = {
-  default = '',
-  symlink = '',
-  git = {
-    unstaged = '✗',
-    staged = '✓',
-    unmerged = '',
-    renamed = '➜',
-    untracked = '★',
-    deleted = '',
-    ignored = '',
-  },
-  folder = {
-    arrow_open = "",
-    arrow_closed = "",
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-    symlink_open = "",
-  },
-  lsp = {
-    hint = "",
-    info = "",
-    warning = "",
-    error = "",
-  }
-}
-
 
 local tree = require("nvim-tree.config")
 local tree_cb = tree.nvim_tree_callback
@@ -65,14 +28,9 @@ require("nvim-tree").setup {
 	disable_netrw       = true,
 	hijack_netrw        = true,
     open_on_tab         = false,
-    -- auto_close          = true,
 	update_focused_file = {
 		update_cwd = true
 	},
-	-- update_to_buf_dir   = {
-	-- 	enable = true,
-	-- 	auto_open = true,
-	-- },
 	filters = {
         dotfiles = false,
         custom = {'.git', '.cache'}
@@ -81,6 +39,13 @@ require("nvim-tree").setup {
         enable = true,
         ignore = true,
         timeout = 500,
+    },
+    renderer = {
+        icons = {
+            glyphs = {
+                git = {untracked = ""}
+            }
+        }
     },
 	view = {
 		mappings = {
@@ -128,13 +93,3 @@ require("nvim-tree").setup {
 		}
 	}
 }
-vim.api.nvim_exec([[
-    " hi NvimTreeNormal guibg=#222222
-    " hi NvimTreeCursorLine guibg=#7c7cff guifg=#222222
-    " hi NvimTreeNormal guibg=#2d313b
-    " hi NvimTreeRootFolder guifg=#778399
-    " hi NvimTreeIndentMarker guifg=#778399
-    " hi NvimTreeFolderIcon guifg=#abb2bf guibg=#2d313b
-    " hi NvimTreeFolderName guifg=#abb2bf guibg=#2d313b
-    " hi NvimTreeOpenedFolderName guifg=#abb2bf guibg=#2d313b
-  ]], false)
