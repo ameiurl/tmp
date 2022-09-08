@@ -329,20 +329,22 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " coc自动补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ameiurl/vim-snippets'
-Plug 'liuchengxu/vista.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'ameiurl/vim-snippets'
 
 " lsp
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'williamboman/nvim-lsp-installer'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" vista
+Plug 'liuchengxu/vista.vim'
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -376,95 +378,95 @@ let g:maplocalleader=';'
 " == COC
 " ==
 "可以在服务启动的时候，自动安装多个扩展插件
-let g:coc_global_extensions = [
-	\ 'coc-phpls',
-	\ 'coc-json',
-	\ 'coc-css',
-	\ 'coc-html',
-	\ 'coc-xml',
-	"\ 'coc-pairs',
-	\ 'coc-tsserver',
-	\ 'coc-yank',
-    \ 'coc-translator',
-	\ 'coc-snippets' ]
-
-inoremap <silent><expr> <TAB>
-	"\ pumvisible() ? coc#_select_confirm() :
-	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-	\ <SID>check_back_space() ? "\<TAB>" :
-	\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-o> coc#refresh()
-function! Show_documentation()
-	call CocActionAsync('highlight')
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	else
-		call CocAction('doHover')
-	endif
-endfunction
-nnoremap <LEADER>h :call Show_documentation()<CR>
-" set runtimepath^=~/.config/nvim/coc-extensions/coc-flutter-tools/
-" let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
-" let $NVIM_COC_LOG_LEVEL = 'debug'
-" let $NVIM_COC_LOG_FILE = '/Users/david/Desktop/log.txt'
-
-nnoremap <silent><nowait> <LEADER>l :CocList diagnostics<cr>
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nnoremap <c-c> :CocCommand<CR>
-" Text Objects
-xmap kf <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap kf <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-xmap kc <Plug>(coc-classobj-i)
-omap kc <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-" Useful commands
-nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
-nmap <silent> go <Plug>(coc-definition)
-nmap <silent> gO :buffer sp<CR><Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gl <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-nmap tt :CocCommand explorer<CR>
-" coc-translator
-nmap ts <Plug>(coc-translator-p)
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>aw  <Plug>(coc-codeaction-selected)w
-" coctodolist
-" nnoremap <leader>tn :CocCommand todolist.create<CR>
-" nnoremap <leader>tl :CocList todolist<CR>
-" nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR>
-" coc-tasks
-noremap <silent> <leader>ts :CocList tasks<CR>
-" coc-snippets
-" imap <C-l> <Plug>(coc-snippets-expand)
-" vmap <C-e> <Plug>(coc-snippets-select)
-" let g:coc_snippet_next = '<c-e>'
-" let g:coc_snippet_prev = '<c-n>'
-" imap <C-e> <Plug>(coc-snippets-expand-jump)
-" coc-snippets
-imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-e> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = '<c-n>'
-imap <C-e> <Plug>(coc-snippets-expand-jump)
-let g:snips_author = 'David Chen'
-autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+"let g:coc_global_extensions = [
+"	\ 'coc-phpls',
+"	\ 'coc-json',
+"	\ 'coc-css',
+"	\ 'coc-html',
+"	\ 'coc-xml',
+"	"\ 'coc-pairs',
+"	\ 'coc-tsserver',
+"	\ 'coc-yank',
+"    \ 'coc-translator',
+"	\ 'coc-snippets' ]
+"
+"inoremap <silent><expr> <TAB>
+"	\ pumvisible() ? coc#_select_confirm() :
+"	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"	\ <SID>check_back_space() ? "\<TAB>" :
+"	\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+"function! s:check_back_space() abort
+"	let col = col('.') - 1
+"	return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"inoremap <silent><expr> <c-space> coc#refresh()
+"inoremap <silent><expr> <c-o> coc#refresh()
+"function! Show_documentation()
+"	call CocActionAsync('highlight')
+"	if (index(['vim','help'], &filetype) >= 0)
+"		execute 'h '.expand('<cword>')
+"	else
+"		call CocAction('doHover')
+"	endif
+"endfunction
+"nnoremap <LEADER>h :call Show_documentation()<CR>
+"" set runtimepath^=~/.config/nvim/coc-extensions/coc-flutter-tools/
+"" let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
+"" let $NVIM_COC_LOG_LEVEL = 'debug'
+"" let $NVIM_COC_LOG_FILE = '/Users/david/Desktop/log.txt'
+"
+"nnoremap <silent><nowait> <LEADER>l :CocList diagnostics<cr>
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"nnoremap <c-c> :CocCommand<CR>
+"" Text Objects
+"xmap kf <Plug>(coc-funcobj-i)
+"xmap af <Plug>(coc-funcobj-a)
+"omap kf <Plug>(coc-funcobj-i)
+"omap af <Plug>(coc-funcobj-a)
+"xmap kc <Plug>(coc-classobj-i)
+"omap kc <Plug>(coc-classobj-i)
+"xmap ac <Plug>(coc-classobj-a)
+"omap ac <Plug>(coc-classobj-a)
+"" Useful commands
+"nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+"nmap <silent> go <Plug>(coc-definition)
+"nmap <silent> gO :buffer sp<CR><Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"" nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gl <Plug>(coc-references)
+"nmap <leader>rn <Plug>(coc-rename)
+"nmap tt :CocCommand explorer<CR>
+"" coc-translator
+"nmap ts <Plug>(coc-translator-p)
+"" Remap for do codeAction of selected region
+"function! s:cocActionsOpenFromSelected(type) abort
+"  execute 'CocCommand actions.open ' . a:type
+"endfunction
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>aw  <Plug>(coc-codeaction-selected)w
+"" coctodolist
+"" nnoremap <leader>tn :CocCommand todolist.create<CR>
+"" nnoremap <leader>tl :CocList todolist<CR>
+"" nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR>
+"" coc-tasks
+"noremap <silent> <leader>ts :CocList tasks<CR>
+"" coc-snippets
+"" imap <C-l> <Plug>(coc-snippets-expand)
+"" vmap <C-e> <Plug>(coc-snippets-select)
+"" let g:coc_snippet_next = '<c-e>'
+"" let g:coc_snippet_prev = '<c-n>'
+"" imap <C-e> <Plug>(coc-snippets-expand-jump)
+"" coc-snippets
+"imap <C-l> <Plug>(coc-snippets-expand)
+"vmap <C-e> <Plug>(coc-snippets-select)
+"let g:coc_snippet_next = '<tab>'
+"let g:coc_snippet_prev = '<c-n>'
+"imap <C-e> <Plug>(coc-snippets-expand-jump)
+"let g:snips_author = 'David Chen'
+"autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 
 " ==
@@ -591,29 +593,29 @@ let g:VM_maps["Redo"]               = '<C-r>'
 " ==
 " == vista 
 " ==
-function! NearestMethodOrFunction() abort
-	return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-set statusline+=%{NearestMethodOrFunction()}
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'coc'
-let g:vista_executive_for = {
-			\ 'cpp': 'coc',
-			\ 'php': 'coc',
-			\ }
-let g:vista_ctags_cmd = {
-			\ 'haskell': 'hasktags -x -o - -c',
-			\ }
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-			\   "function": "\uf794",
-			\   "variable": "\uf71b",
-			\  }
-nnoremap <silent> <Leader>t :<C-u>Vista!!<CR>
-autocmd FileType vista nnoremap <silent><Esc> :Vista!<CR>
-let g:vista_ignore_kinds = ['Variable']
+"function! NearestMethodOrFunction() abort
+"	return get(b:, 'vista_nearest_method_or_function', '')
+"endfunction
+"set statusline+=%{NearestMethodOrFunction()}
+"autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+"let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+"let g:vista_default_executive = 'coc'
+"let g:vista_executive_for = {
+"			\ 'cpp': 'coc',
+"			\ 'php': 'coc',
+"			\ }
+"let g:vista_ctags_cmd = {
+"			\ 'haskell': 'hasktags -x -o - -c',
+"			\ }
+"let g:vista_fzf_preview = ['right:50%']
+"let g:vista#renderer#enable_icon = 1
+"let g:vista#renderer#icons = {
+"			\   "function": "\uf794",
+"			\   "variable": "\uf71b",
+"			\  }
+"nnoremap <silent> <Leader>t :<C-u>Vista!!<CR>
+"autocmd FileType vista nnoremap <silent><Esc> :Vista!<CR>
+"let g:vista_ignore_kinds = ['Variable']
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 500
@@ -627,8 +629,8 @@ require('plugins.nvim-autopairs')
 require('plugins.comment')
 require('plugins.bufferline')
 require('plugins.galaxyline')
---require('plugins.lsp')
---require('plugins.vista')
+require('plugins.lsp')
+require('plugins.vista')
 EOF
 
 

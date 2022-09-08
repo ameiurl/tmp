@@ -163,7 +163,7 @@
 	"for …": {
 		"prefix": "for",
 		"body": [
-			"for ($${1:i}=${2:0}; $${1:i} < $3; $${1:i}++) { ",
+			"for (\\$${1:i}=${2:0}; \\$${1:i} < $3; \\$${1:i}++) { ",
 			"\t${0:# code...}",
 			"}"
 		],
@@ -172,16 +172,11 @@
 	"foreach …": {
 		"prefix": "foreach",
 		"body": [
-			"foreach ($${1:variable} as $${2:key} ${3:=> $${4:value}}) {",
+			"foreach (\\$${1:variable} as \\$${2:key} ${3:=> \\$${4:value}}) {",
 			"\t${0:# code...}",
 			"}"
 		],
 		"description": "Foreach loop"
-	},
-	"$… = array (…)": {
-		"prefix": "array",
-		"body": "$${1:arrayName} = array('$2' => $3${4:,} $0);",
-		"description": "Array initializer"
 	},
 	"$… = […]": {
 		"prefix": "shorray",
