@@ -604,9 +604,6 @@ nnoremap <leader>w :w<CR>
 
 " Quickly close the current window
 " nnoremap <leader>q :q<CR>
-imap <C-s> <Esc>:w<CR>
-nmap <C-s> :w<CR>
-
 func! ToggleQuickFix()
     if getqflist({'winid' : 0}).winid
         cclose
@@ -700,7 +697,5 @@ endfunc
 
 " theme主题
 "set background=dark
-
-set t_Co=256
 
 colorscheme zephyr 
