@@ -76,7 +76,7 @@ local on_attach = function(_, bufnr)
 
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", lsp("buf.declaration()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "go", lsp("buf.definition()<CR>"), opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", lsp("buf.hover()<CR>"), opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gH", lsp("buf.hover()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", lsp("buf.implementation()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", lsp("buf.references()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gn", lsp("buf.rename()<CR>"), opts)
