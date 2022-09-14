@@ -22,10 +22,10 @@ fi
 
 if ! [ -e ~/.config/nvim/autoload/plug.vim ]; then
 	echo "[*] Installing vim-plug"
-	#curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-	#https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	git clone https://github.com/junegunn/vim-plug
-	cp vim-plug/plug.vim  ~/.config/nvim/autoload/plug.vim
+	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	# git clone https://github.com/junegunn/vim-plug
+	# cp vim-plug/plug.vim  ~/.config/nvim/autoload/plug.vim
 fi
 
 nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'

@@ -178,6 +178,21 @@ set incsearch
 set wrapscan
 
 "----------------------------------------------------------------------
+" 补全设置
+"----------------------------------------------------------------------
+
+" 让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+set completeopt=longest,menu
+
+" 增强模式中的命令行自动完成操作
+set wildmenu
+
+
+"==========================================
+" others 其它设置
+"==========================================
+
+"----------------------------------------------------------------------
 " 设置代码折叠
 "----------------------------------------------------------------------
 if has('folding')
@@ -192,87 +207,21 @@ if has('folding')
 	" diff      对没有更改的文本进行折叠
 	" marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
 	" 代码折叠默认使用缩进
-	set fdm=indent
+	set fdm=marker
 	
 	" 默认打开所有缩进
 	set foldlevel=99
 endif
-
-"----------------------------------------------------------------------
-" 文件搜索和补全时忽略下面扩展名
-"----------------------------------------------------------------------
-set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class
-
-set wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib "stuff to ignore when tab completing
-set wildignore+=*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex
-set wildignore+=*.zip,*.7z,*.rar,*.gz,*.tar,*.gzip,*.bz2,*.tgz,*.xz    " MacOSX/Linux
-set wildignore+=*DS_Store*,*.ipch
-set wildignore+=*.gem
-set wildignore+=*.png,*.jpg,*.gif,*.bmp,*.tga,*.pcx,*.ppm,*.img,*.iso
-set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/.rbenv/**
-set wildignore+=*/.nx/**,*.app,*.git,.git
-set wildignore+=*.wav,*.mp3,*.ogg,*.pcm
-set wildignore+=*.mht,*.suo,*.sdf,*.jnlp
-set wildignore+=*.chm,*.epub,*.pdf,*.mobi,*.ttf
-set wildignore+=*.mp4,*.avi,*.flv,*.mov,*.mkv,*.swf,*.swc
-set wildignore+=*.ppt,*.pptx,*.docx,*.xlt,*.xls,*.xlsx,*.odt,*.wps
-set wildignore+=*.msi,*.crx,*.deb,*.vfd,*.apk,*.ipa,*.bin,*.msu
-set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
-set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
-
-
-" 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
-set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
-" 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber number
-  else
-    set relativenumber
-  endif
-endfunc
-
-" 防止tmux下vim的背景色显示异常
-" Refer: http://sunaku.github.io/vim-256color-bce.html
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
-" disbale paste mode when leaving insert mode
-au InsertLeave * set nopaste
-
-" F5 set paste问题已解决, 粘贴代码前不需要按F5了
-" F5 粘贴模式paste_mode开关,用于有格式的代码粘贴
-" Automatically set paste mode in Vim when pasting in insert mode
-function! XTermPasteBegin()
-	set pastetoggle=<Esc>[201~
-	set paste
-	return ""
-endfunction
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-"==========================================
-" others 其它设置
-"==========================================
 
 " vimrc文件修改之后自动加载, windows
 autocmd! bufwritepost _vimrc source %
 " vimrc文件修改之后自动加载, linux
 autocmd! bufwritepost .vimrc source %
 
-" 自动补全配置
-" 让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
-set completeopt=longest,menu
+" 插入模式下用绝对行号, 普通模式下用相对
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber
 
-" 增强模式中的命令行自动完成操作
-set wildmenu
 
 " 回车即选中当前项
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
@@ -301,6 +250,28 @@ endif
 
 " 系统剪贴板
 set clipboard+=unnamedplus
+
+"----------------------------------------------------------------------
+" 文件搜索和补全时忽略下面扩展名
+"----------------------------------------------------------------------
+set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class
+
+set wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib "stuff to ignore when tab completing
+set wildignore+=*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex
+set wildignore+=*.zip,*.7z,*.rar,*.gz,*.tar,*.gzip,*.bz2,*.tgz,*.xz    " MacOSX/Linux
+set wildignore+=*DS_Store*,*.ipch
+set wildignore+=*.gem
+set wildignore+=*.png,*.jpg,*.gif,*.bmp,*.tga,*.pcx,*.ppm,*.img,*.iso
+set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/.rbenv/**
+set wildignore+=*/.nx/**,*.app,*.git,.git
+set wildignore+=*.wav,*.mp3,*.ogg,*.pcm
+set wildignore+=*.mht,*.suo,*.sdf,*.jnlp
+set wildignore+=*.chm,*.epub,*.pdf,*.mobi,*.ttf
+set wildignore+=*.mp4,*.avi,*.flv,*.mov,*.mkv,*.swf,*.swc
+set wildignore+=*.ppt,*.pptx,*.docx,*.xlt,*.xls,*.xlsx,*.odt,*.wps
+set wildignore+=*.msi,*.crx,*.deb,*.vfd,*.apk,*.ipa,*.bin,*.msu
+set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
+set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
 
 
 """""""" 插件管理vim-plug""""""""
@@ -509,20 +480,6 @@ EOF
 
 
 "--------------------------自定义快捷键---------------------
-
-" 代码折叠自定义快捷键 <leader>zz
-let g:FoldMethod = 0
-fun! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfun
-
-map <leader>zz :call ToggleFold()<cr>
 
 " ===============================================
 " === 标签管理===================================
