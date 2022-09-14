@@ -583,7 +583,7 @@ noremap <silent><Leader>/ :nohls<CR>
 map <Leader>sa ggVG
 
 " Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+" nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " 命令行模式增强
