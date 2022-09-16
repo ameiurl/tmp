@@ -285,5 +285,22 @@
 			"print_r(${1:})"
 		],
 		"description": "print_r block"
+	},
+	"/*": {
+		"prefix": "/*",
+		"body": [
+            "/**",
+            " * ${1:}",
+            " * @return mixed",
+            "*/"
+		],
+		"description": ""
+	},
+	"php": {
+		"prefix": "php",
+		"body": [
+			"<?php ${1:}?>"
+		],
+		"description": ""
 	}
 }

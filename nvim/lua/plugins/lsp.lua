@@ -39,20 +39,6 @@ cmp.setup({
 				fallback()
 			end
 		end,
-		["<CR>"] = function(fallback)
-			if cmp.visible() then
-				cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true,
-				})()
-			elseif vim.fn["vsnip#available"](1) == 1 then
-				feedkey("<Plug>(vsnip-expand-or-jump)", "")
-			elseif has_words_before() then
-				cmp.complete()
-			else
-				fallback()
-			end
-		end,
 	},
 	sources = {
 		{ name = "nvim_lsp" },
