@@ -312,6 +312,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 " vista
 Plug 'liuchengxu/vista.vim'
+Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
 
 " markdown
 Plug 'plasticboy/vim-markdown'
@@ -340,6 +341,11 @@ call plug#end()
 let mapleader=','
 let g:mapleader=','
 let g:maplocalleader=';'
+
+" ==
+" == emmet
+" ==
+let g:user_emmet_expandabbr_key = '<C-o>'
 
 " ==
 " == far

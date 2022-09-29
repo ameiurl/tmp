@@ -88,7 +88,7 @@ local on_attach = function(_, bufnr)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", diag("open_float()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "d[", diag("goto_prev()<CR>"), opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "d]", diag("goto_next()<CR>"), opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", diag("setloclist()<CR>"), opts)
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", diag("setloclist()<CR>"), opts)
 end
 
 local function contains(tab, val)
