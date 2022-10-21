@@ -104,7 +104,7 @@ lsp_installer.on_server_ready(function(server)
 	local opts = {
 		on_attach = function(client, bufnr)
 			if contains({ "tsserver", "gopls", "intelephense" }, server.name) then
-				client.resolved_capabilities.document_formatting = false
+				client.server_capabilities.document_formatting = false
 			end
 			on_attach(client, bufnr)
 		end,
