@@ -321,7 +321,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdow
 " Git
 Plug 'lewis6991/gitsigns.nvim'					   " show git status [c上一个 ]c下一个
 Plug 'tpope/vim-fugitive'						   " :Git log O新窗口打开,Gclog
-Plug 'kdheepak/lazygit.nvim'
 
 " vim补助
 Plug 'christoomey/vim-tmux-navigator'              " 让vim能兼容tmux
@@ -354,16 +353,6 @@ let g:far#enable_undo=1
 let g:far#source='ag'
 " :Farr foo bar **/*.py   t s u
 noremap <LocalLeader>f :Far  **/*.php<left><left><left><left><left><left><left><left><left>
-
-" ==
-" == lazygit 
-" ==
-nnoremap <Leader>g :LazyGit<CR>
-let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
-let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
-let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
-
 
 " ==
 " == suda
