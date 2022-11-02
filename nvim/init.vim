@@ -195,7 +195,7 @@ set wildmenu
 "----------------------------------------------------------------------
 " 设置代码折叠
 "----------------------------------------------------------------------
-if has('folding')
+" if has('folding')
 	" 允许代码折叠
 	set foldenable
 
@@ -211,7 +211,7 @@ if has('folding')
 	
 	" 默认打开所有缩进
 	set foldlevel=99
-endif
+" endif
 
 " vimrc文件修改之后自动加载, windows
 autocmd! bufwritepost _vimrc source %
@@ -310,10 +310,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
-" vista
-Plug 'liuchengxu/vista.vim'
-Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
-
 " markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'} " F11启动:InstantMarkdownPreview
@@ -335,6 +331,8 @@ Plug 'psliwka/vim-smoothie'						   " 滚动翻页效果插件
 Plug 'machakann/vim-highlightedyank'			   " 复制效果
 Plug 'kshenoy/vim-signature'					   " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
 Plug 'brooth/far.vim'							   " <LocalLeader>f t s u
+Plug 'mattn/emmet-vim'							   " <c-e> html代码补全
+Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 let mapleader=','
