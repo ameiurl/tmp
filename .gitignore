@@ -1,6 +1,7 @@
 *_bak/*
 www/*
 nginx/conf.d/*
+!nginx/conf.d/nginx.conf
 gogs/gogs/log/
 gogs/ssh/
 /logs
