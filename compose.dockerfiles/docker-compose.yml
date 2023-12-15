@@ -11,17 +11,13 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      # MYSQL_ROOT_PASSWORD: root
-      # MYSQL_DATABASE: sandbox
-      # MYSQL_USER: sandbox_user
-      # MYSQL_PASSWORD: passpass
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
       - '3306:3306'
     volumes:
       - '/server/mysql/data:/var/lib/mysql'
-      - '/server/mysql/my.cnf:/etc/mysql/conf.d/my.cnf'
-      - '/server/mysql/sql:/docker-entrypoint-initdb.d'
+      - '/server/mysql/conf:/etc/mysql/conf.d/my.cnf'
+      - '/server/logs/mysql.logs:/data/mysql/logs'
   myphp:
     build: ./php
     container_name: "myphp"
@@ -32,6 +28,7 @@ services:
     volumes:
       - /server/www:/var/www/html
       - /server/php/php.ini:/usr/local/etc/php/php.ini
+      - /server/logs/php.logs:/var/log/php
     links:
       - "mydb"
       - "myredis"
