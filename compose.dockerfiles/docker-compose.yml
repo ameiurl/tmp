@@ -19,12 +19,27 @@ services:
       - '/server/mysql/conf:/etc/mysql/conf.d/my.cnf'
       - '/server/logs/mysql.logs:/data/mysql/logs'
   myphp:
-    build: ./php
+    # build: ./php
+    image: cms1984/php7.3.8-fpm 
     container_name: "myphp"
     privileged: true
     restart: always
     ports:
       - "9000:9000"
+    volumes:
+      - /server/www:/var/www/html
+      - /server/php/php.ini:/usr/local/etc/php/php.ini
+      - /server/logs/php.logs:/var/log/php
+    links:
+      - "mydb"
+      - "myredis"
+  myphp8.2:
+    image: suyar/php:8.2-fpm 
+    container_name: "myphp8.2"
+    privileged: true
+    restart: always
+    ports:
+      - "9001:9000"
     volumes:
       - /server/www:/var/www/html
       - /server/php/php.ini:/usr/local/etc/php/php.ini
