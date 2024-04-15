@@ -7,7 +7,7 @@ nginx/conf.d/*
 gogs/gogs/log/
 gogs/ssh/
 /logs
-/mysql/*
 !/mysql/data/backup/
+/mysql/*
 !/mysql/conf/
 /redis
