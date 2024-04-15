@@ -9,5 +9,5 @@ gogs/ssh/
 /logs
 /mysql/*
 !/mysql/conf/
-!/mysql/data/backup/
+!/mysql/backup/
 /redis

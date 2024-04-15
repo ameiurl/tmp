@@ -1,6 +1,6 @@
 #!/bin/bash
 # DIR=/var/lib/mysql/backup
-DIR=/server/mysql/data/backup
+DIR=/server/mysql/backup
 if [ ! -e $DIR ]
 then
 /bin/mkdir -p $DIR
