@@ -8,6 +8,6 @@ gogs/gogs/log/
 gogs/ssh/
 /logs
 /mysql/*
-!/mysql/conf/
 !/mysql/data/backup/
+!/mysql/conf/
 /redis
