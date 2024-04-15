@@ -18,7 +18,6 @@ services:
       - '/server/mysql/data:/var/lib/mysql'
       - '/server/mysql/conf:/etc/mysql/conf.d/my.cnf'
       - '/server/logs/mysql.logs:/data/mysql/logs'
-      - '/server/mysqlback:/data/mysql/mysqlback'
   myphp:
     # build: ./php
     image: cms1984/php7.3.8-fpm 

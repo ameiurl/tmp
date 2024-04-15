@@ -1,13 +1,12 @@
 #!/bin/bash
-
-. /etc/profile
-
-DIR=/var/lib/mysql/backup
-if [ ! -e $DIR ]
+docker exec mydb mysqldump -uroot -proot gogs | gzip > /home/amei/mysql/gogs_`date +%Y%m%d`.sql.gz
+send=`date '+%Y-%m-%d %H:%M:%S'`
+if [ $? -ne 0 ];
 then
-/bin/mkdir -p $DIR
+    echo "$send 数据备份失败"
+    exit -1
+else
+    echo "$send 数据备份成功！"
 fi
-NOWDATE=$(date +%Y%m%d%H%M%S)
-/usr/bin/mysqldump -u root -proot gogs > "$DIR/data_gogs_$NOWDATE.sql"
-
-/usr/bin/find $DIR -mtime +7 -name "data_gogs_[1-9]*.sql" -exec rm -rf {} \;
+ 
+find /home/amei/mysql/ -mtime +7 -name 'gogs_[1-9].sql' -exec rm -rf {} \;
